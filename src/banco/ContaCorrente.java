@@ -1,12 +1,24 @@
 package banco;
 
 public class ContaCorrente {
-	public double saldo=0.00;
-	public String titular;
-	public double chequeEspecial=1000;
+	public double saldo;
+	public Cliente titular;
+	public double chequeEspecial;
 	public String agencia;
 	public String nrConta;
 	public String banco;
+	
+	//construtores
+	public ContaCorrente() {
+		this.chequeEspecial=1000;
+		this.saldo=0.00;
+	}
+	public ContaCorrente( double chequeEspecial,double saldo,Cliente titular) {
+		this();
+		
+	}
+	
+	
 	
 	public void depositar(double valor) {
 		this.saldo+=valor;

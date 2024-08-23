@@ -6,12 +6,12 @@ public class TestarContas {
 		c1.banco="Itaú";
 		c1.agencia="0755";
 		c1.nrConta="1234-5";
-		c1.titular="Ana Maria";
+//		c1.titular="Ana Maria";
 		ContaCorrente c2=new ContaCorrente();
 		c2.banco="Bradesco";
 		c2.agencia="0756";
 		c2.nrConta="5678-9";
-		c2.titular="Anabelle Maria";
+//		c2.titular="Anabelle Maria";
 		c2.depositar(200);
 		
 		System.out.println(c1.exibirSaldo());
@@ -31,3 +31,4 @@ public class TestarContas {
 	}
 
 }
+//https://github.com/SanLeoAgo/POO
