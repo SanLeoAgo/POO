@@ -7,17 +7,34 @@ public class ContaCorrente {
 	public String agencia;
 	public String nrConta;
 	public String banco;
+	public static int qtdContas;
 	
 	//construtores
 	public ContaCorrente() {
-		this.chequeEspecial=1000;
+		qtdContas++;
 		this.saldo=0.00;
 	}
-	public ContaCorrente( double chequeEspecial,double saldo,Cliente titular) {
+	public ContaCorrente( double chequeEspecial) {
 		this();
-		
+		this.chequeEspecial=chequeEspecial;
 	}
 	
+	public ContaCorrente(boolean chequeEspecial) {
+		if(chequeEspecial) {
+			this.chequeEspecial=1000;
+		}
+	}
+	public ContaCorrente(double saldo,double chequeEspecial,String agencia,String nrConta,String banco) {
+		this.saldo=saldo;
+		this.chequeEspecial=chequeEspecial;
+		this.agencia=agencia;
+		this.nrConta=nrConta;
+		this.banco=banco;
+	}
+	public ContaCorrente(double saldo,double chequeEspecial,String agencia,String nrConta,String banco,Cliente cliente) {
+		this(saldo,chequeEspecial,agencia,nrConta,banco);
+		this.titular=cliente;
+	}
 	
 	
 	public void depositar(double valor) {
@@ -51,5 +68,11 @@ public class ContaCorrente {
 		}
 		return false;
 	}
+	public static void inicializarContas(ContaCorrente[] contas) {
+		for (int i = 0; i < contas.length; i++) {
+			contas[i]=new ContaCorrente();
+		}
+	}
+	
 	
 }
